@@ -1,22 +1,20 @@
 #开发环境配置
 server:
 #默认端口号8080
-port:1001
+port: 8081
 servlet:
 #应用访问路径
 context-path: /
 
-
-tomcat:
-#tomcat的URI编码
-uri-encoding:UTF-8;
-#tomcat最大线程数，默认为200
-max-threads:800
-#tomcat启动初始化的线程数，默认为25
-min-spare-threads:30
-
-
 spring:
-application:
-name: ${APPLICATION_NAME:sal-local}
+    datasource:
+      username: root
+      password: root
+      url: jdbc:mysql://localhost:3306/mybatis?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC
+      type: com.alibaba.druid.pool.DruidDataSource
+
+  #配置SQl语句的XML文件的位置
+mybatis:
+  mapper-locations=classpath:mapper/*.xml:
+
 

@@ -1,4 +1,4 @@
-package sal.dto;
+package com.sal.dto.res;
 
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
@@ -12,11 +12,20 @@ import java.util.Date;
 public class MessageDTO implements Serializable {
 
     private static final long serialVersionUID = 1L;
+
+    @ApiModelProperty(value = "名", name = "firstname", required = true)
+    private String firstname;
+
+    @ApiModelProperty(value = "姓",name = "lastname",required = true)
+    private String lastname;
+
     /**
-     * 用户名
+     * 根据规则自动生成的登陆ID
      */
-    @ApiModelProperty(value = "用户名", name = "username", required = true)
-    private String username;
+    @ApiModelProperty(value = "登陆ID", name = "loginID")
+    private String loginID;
+
+
     /**
      * 电话号码
      */
@@ -57,7 +66,14 @@ public class MessageDTO implements Serializable {
     @ApiModelProperty(value = "出生日期", name = "birthday")
     private Date birthday;
 
+    /**
+     * 用户ID
+     */
+    private String UserId;
+
     @ApiModelProperty(value = "创建时间", name = "creatTime")
     private Date creatTime;
+
+
 
 }
